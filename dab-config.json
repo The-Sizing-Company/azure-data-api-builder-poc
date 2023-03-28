@@ -1,0 +1,39 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.5.35/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "cosmosdb_nosql",
+    "options": {
+      "database": "stylecard-api",
+      "schema": "schema.gql"
+    },
+    "connection-string": "AccountEndpoint=https://c07948c1-0ee0-4-231-b9ee.documents.azure.com:443/;AccountKey=XNjlE3AHtu5aepQIR2lrplppDtl3qN3LwexKrAQmb5q2nU0CxlIU3Lu3r8DZ46oRfvp79uLu3QOeACDbh8BUjg=="
+  },
+  "runtime": {
+    "graphql": {
+      "allow-introspection": true,
+      "enabled": true,
+      "path": "/graphql"
+    },
+    "host": {
+      "mode": "development",
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      }
+    }
+  },
+  "entities": {
+    "User": {
+      "source": "users",
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": ["*"]
+        }
+      ]
+    }
+  }
+}

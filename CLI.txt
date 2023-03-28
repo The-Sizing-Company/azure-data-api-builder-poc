@@ -1,0 +1,8 @@
+Using DATA API Builder + Cosmos DB (CLI)
+
+1. dotnet --list-sdks
+2. dotnet tool install --global Microsoft.DataApiBuilder
+3. dab init --database-type "cosmosdb_nosql" --graphql-schema schema.gql --cosmosdb_nosql-database stylecard-api --connection-string "AccountEndpoint=https://c07948c1-0ee0-4-231-b9ee.documents.azure.com:443/;AccountKey=XNjlE3AHtu5aepQIR2lrplppDtl3qN3LwexKrAQmb5q2nU0CxlIU3Lu3r8DZ46oRfvp79uLu3QOeACDbh8BUjg==;" --host-mode "Development"
+4. dab add User --source users --permissions "anonymous:*" 
+5. dab start 
+
